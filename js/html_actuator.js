@@ -52,7 +52,7 @@ HTMLActuator.prototype.clearContainer = function (container) {
 };
 
 HTMLActuator.prototype.addTile = function (tile) {
-  var text=new Array(7);
+  var text=new Array(21);
   text[0] = " ";
   text[1] = " ";
   text[2] = " ";
@@ -60,6 +60,20 @@ HTMLActuator.prototype.addTile = function (tile) {
   text[4] = " ";
   text[5] = " ";
   text[6] = " ";
+  text[7] = " ";
+  text[8] = " ";
+  text[9] = " ";
+  text[10] = " ";
+  text[11] = " ";
+  text[12] = " ";
+  text[13] = " ";
+  text[14] = " ";
+  text[15] = " ";
+  text[16] = " ";
+  text[17] = " ";
+  text[18] = " ";
+  text[19] = " ";
+  text[20] = " ";
   
   var self = this;
   var text2 = function (n) { var r = 0; while (n > 1) r++, n >>= 1; return r; }
@@ -140,16 +154,30 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 };
 
 HTMLActuator.prototype.message = function (won) {
-  var mytxt=new Array(14);
-  mytxt[0]="Haa , you lost at 3 tiles!";
-  mytxt[1]="Haa , you lost at 4 tiles!";
-  mytxt[2]="Haa , you lost at 5 tiles!";
+  var mytxt=new Array(17);
+  mytxt[0]="Haa , 恭喜你解锁了冯庸，继续加油!";
+  mytxt[1]="Haa , 恭喜你解锁了牧歌，继续加油!";
+  mytxt[2]="Haa , 恭喜你解锁了陈骁，继续加油!";
+  mytxt[3]="Haa , 恭喜你解锁了曹光，继续加油!";
+  mytxt[4]="Haa , 恭喜你解锁了曹光（真水无香），继续加油!";
+  mytxt[5]="Haa , 恭喜你解锁了杨修贤，继续加油!";
+  mytxt[6]="Haa , 恭喜你解锁了韩沉，继续加油!";
+  mytxt[7]="Haa , 恭喜你解锁了伯力，继续加油!";
+  mytxt[8]="Haa , 恭喜你解锁了赵云澜，继续加油!";
+  mytxt[9]="Haa , 恭喜你解锁了章远，继续加油!";
+  mytxt[10]="Haa , 恭喜你解锁了裴文德，继续加油!";
+  mytxt[11]="Haa , 恭喜你解锁了罗非，继续加油!";
+  mytxt[12]="Haa , 恭喜你解锁了马飞，继续加油!";
+  mytxt[13]="Haa , 恭喜你解锁了白起，继续加油!";
+  mytxt[14]="Haa , 恭喜你解锁了江阳，继续加油!";
+  mytxt[15]="Haa , 恭喜你解锁了白术，继续加油!";
+  mytxt[16]="Haa , 恭喜你解锁了侯昊，继续加油!";
 
 
 
   var text3 = function (m) { var r = 0; while (m > 1) r++, m >>= 1; return r; }
   var type    = won ? "game-won" : "game-over";
-  var message = won ? "Haaaaaaaaaaaaaaaa , you won the game!" : mytxt[text3(maxscore)-3];
+  var message = won ? "Haaaa , 恭喜你解锁了白宇的最新角色：丁世俊!" : mytxt[text3(maxscore)-3];
 
   if (typeof ga !== "undefined") {
     ga("send", "event", "game", "end", type, this.score);
@@ -178,8 +206,8 @@ HTMLActuator.prototype.scoreTweetButton = function () {
   tweet.setAttribute("data-counturl", "http://geno1024.github.io/2048-233-html/");
   tweet.textContent = "Tweet";
 
-  var text = "I scored " + this.score + " points at 233333 edition, a game where you " +
-             "join numbers to score high! #233333";
+  var text = "I scored " + this.score + " points at White Space 2048, a game where you " +
+             "join numbers to score high!";
   tweet.setAttribute("data-text", text);
 
   return tweet;
