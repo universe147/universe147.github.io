@@ -52,7 +52,7 @@ HTMLActuator.prototype.clearContainer = function (container) {
 };
 
 HTMLActuator.prototype.addTile = function (tile) {
-  var text=new Array(21);
+  var text=new Array(22);
   text[0] = " ";
   text[1] = " ";
   text[2] = " ";
@@ -74,7 +74,8 @@ HTMLActuator.prototype.addTile = function (tile) {
   text[18] = " ";
   text[19] = " ";
   text[20] = " ";
-  
+  text[21] = " ";
+
   var self = this;
   var text2 = function (n) { var r = 0; while (n > 1) r++, n >>= 1; return r; }
 
@@ -86,7 +87,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   // We can't use classlist because it somehow glitches when replacing classes
   var classes = ["tile", "tile-" + tile.value, positionClass];
 
-  if (tile.value > 1048576) classes.push("tile-super");
+  if (tile.value > 2097152) classes.push("tile-super");
 
   this.applyClasses(wrapper, classes);
 
@@ -154,24 +155,25 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 };
 
 HTMLActuator.prototype.message = function (won) {
-  var mytxt=new Array(17);
-  mytxt[0]="Haa , 恭喜你解锁了冯庸，继续加油!";
-  mytxt[1]="Haa , 恭喜你解锁了牧歌，继续加油!";
-  mytxt[2]="Haa , 恭喜你解锁了陈骁，继续加油!";
-  mytxt[3]="Haa , 恭喜你解锁了曹光，继续加油!";
-  mytxt[4]="Haa , 恭喜你解锁了曹光（真水无香），继续加油!";
-  mytxt[5]="Haa , 恭喜你解锁了杨修贤，继续加油!";
-  mytxt[6]="Haa , 恭喜你解锁了韩沉，继续加油!";
-  mytxt[7]="Haa , 恭喜你解锁了伯力，继续加油!";
-  mytxt[8]="Haa , 恭喜你解锁了赵云澜，继续加油!";
-  mytxt[9]="Haa , 恭喜你解锁了章远，继续加油!";
-  mytxt[10]="Haa , 恭喜你解锁了裴文德，继续加油!";
-  mytxt[11]="Haa , 恭喜你解锁了罗非，继续加油!";
-  mytxt[12]="Haa , 恭喜你解锁了马飞，继续加油!";
-  mytxt[13]="Haa , 恭喜你解锁了白起，继续加油!";
-  mytxt[14]="Haa , 恭喜你解锁了江阳，继续加油!";
-  mytxt[15]="Haa , 恭喜你解锁了白术，继续加油!";
-  mytxt[16]="Haa , 恭喜你解锁了侯昊，继续加油!";
+  var mytxt=new Array(18);
+  mytxt[0]="恭喜你解锁了冯庸，继续加油!";
+  mytxt[1]="恭喜你解锁了牧歌，继续加油!";
+  mytxt[2]="恭喜你解锁了陈骁，继续加油!";
+  mytxt[3]="恭喜你解锁了曹光，继续加油!";
+  mytxt[4]="恭喜你解锁了曹光（真水无香），继续加油!";
+  mytxt[5]="恭喜你解锁了杨修贤，继续加油!";
+  mytxt[6]="恭喜你解锁了韩沉，继续加油!";
+  mytxt[7]="恭喜你解锁了蔡晴川，继续加油!";
+  mytxt[8]="恭喜你解锁了伯力，继续加油!";
+  mytxt[9]="恭喜你解锁了赵云澜，继续加油!";
+  mytxt[10]="恭喜你解锁了章远，继续加油!";
+  mytxt[11]="恭喜你解锁了裴文德，继续加油!";
+  mytxt[12]="恭喜你解锁了罗非，继续加油!";
+  mytxt[13]="恭喜你解锁了马飞，继续加油!";
+  mytxt[14]="恭喜你解锁了白起，继续加油!";
+  mytxt[15]="恭喜你解锁了江阳，继续加油!";
+  mytxt[16]="恭喜你解锁了白术，继续加油!";
+  mytxt[17]="恭喜你解锁了侯昊，继续加油!";
 
 
 
